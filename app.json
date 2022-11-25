@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Clutch Toulouse",
+    "slug": "ClutchApp",
+    "version": "4.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/iconClutch.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.clutchmag.clutchtoulouse"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "clutch.android.app",
+      "versionCode": 4
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

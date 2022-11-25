@@ -1,0 +1,292 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/CarrouselContainer.tsx",
+    "description": "",
+    "displayName": "CarrouselContainer",
+    "methods": [],
+    "props": {
+      "type": {
+        "defaultValue": null,
+        "description": "",
+        "name": "type",
+        "declarations": [
+          {
+            "fileName": "src/components/CarrouselContainer.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "enum",
+          "raw": "\"category\" | \"headline\" | \"Today\"",
+          "value": [
+            {
+              "value": "\"category\""
+            },
+            {
+              "value": "\"headline\""
+            },
+            {
+              "value": "\"Today\""
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "C:/IPI/Projets/CDAN/Clutch/ClutchApp/src/components/CategoryCarrouselCard.tsx",
+    "description": "",
+    "displayName": "CategoryCarrouselCard",
+    "methods": [],
+    "props": {
+      "category": {
+        "defaultValue": null,
+        "description": "",
+        "name": "category",
+        "declarations": [
+          {
+            "fileName": "ClutchApp/src/components/CategoryCarrouselCard.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "Category"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "C:/IPI/Projets/CDAN/Clutch/ClutchApp/src/components/EventCarrouselCard.tsx",
+    "description": "",
+    "displayName": "EventCarrouselCard",
+    "methods": [],
+    "props": {
+      "event": {
+        "defaultValue": null,
+        "description": "",
+        "name": "event",
+        "declarations": [
+          {
+            "fileName": "ClutchApp/src/components/EventCarrouselCard.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "Event"
+        }
+      }
+    }
+  },
+  {
+    "tags": {
+      "param": "bgTexture - require('{assets_directory}/textures/{texture_name}.png')",
+      "return": ""
+    },
+    "filePath": "src/components/Header.tsx",
+    "description": "Clutch Header component",
+    "displayName": "Header",
+    "methods": [],
+    "props": {
+      "bgTexture": {
+        "defaultValue": null,
+        "description": "",
+        "name": "bgTexture",
+        "declarations": [
+          {
+            "fileName": "src/components/Header.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "enum",
+          "raw": "ImageSourcePropType",
+          "value": [
+            {
+              "value": "number"
+            },
+            {
+              "value": "ImageURISource",
+              "description": "",
+              "fullComment": "",
+              "tags": {}
+            },
+            {
+              "value": "ImageURISource[]",
+              "description": "",
+              "fullComment": "",
+              "tags": {}
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "C:/IPI/Projets/CDAN/Clutch/ClutchApp/src/components/HeaderActions.tsx",
+    "description": "",
+    "displayName": "HeaderActions",
+    "methods": [],
+    "props": {
+      "hasBackBtn": {
+        "defaultValue": null,
+        "description": "",
+        "name": "hasBackBtn",
+        "declarations": [
+          {
+            "fileName": "ClutchApp/src/components/HeaderActions.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "enum",
+          "raw": "boolean",
+          "value": [
+            {
+              "value": "false"
+            },
+            {
+              "value": "true"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/Information.tsx",
+    "description": "",
+    "displayName": "Information",
+    "methods": [],
+    "props": {
+      "text": {
+        "defaultValue": null,
+        "description": "",
+        "name": "text",
+        "declarations": [
+          {
+            "fileName": "src/components/Information.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "string"
+        }
+      },
+      "icon": {
+        "defaultValue": null,
+        "description": "",
+        "name": "icon",
+        "declarations": [
+          {
+            "fileName": "src/components/Information.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "string"
+        }
+      },
+      "bold": {
+        "defaultValue": null,
+        "description": "",
+        "name": "bold",
+        "declarations": [
+          {
+            "fileName": "src/components/Information.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "enum",
+          "raw": "boolean | undefined",
+          "value": [
+            {
+              "value": "undefined"
+            },
+            {
+              "value": "false"
+            },
+            {
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "underline": {
+        "defaultValue": null,
+        "description": "",
+        "name": "underline",
+        "declarations": [
+          {
+            "fileName": "src/components/Information.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "enum",
+          "raw": "boolean | undefined",
+          "value": [
+            {
+              "value": "undefined"
+            },
+            {
+              "value": "false"
+            },
+            {
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "onPress": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPress",
+        "declarations": [
+          {
+            "fileName": "src/components/Information.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "enum",
+          "raw": "(() => any) | undefined",
+          "value": [
+            {
+              "value": "undefined"
+            },
+            {
+              "value": "() => any",
+              "description": "",
+              "fullComment": "",
+              "tags": {}
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/Menu.tsx",
+    "description": "",
+    "displayName": "Menu",
+    "methods": [],
+    "props": {}
+  }
+]
