@@ -103,8 +103,9 @@ Il existe aussi  [Flipper](https://fbflipper.com/) avec plus de donctionnalités
 Si vous utilisez Webstorm ou un autre IDE de JetBrains. Vous avez la possibilité d'utilisé le debugger déjà configurer pour react-native et qui permets de mettre de points d'arrêts dans votre code.
 
 ##Règles de codage
-
+- Ne push que dans la branche correspondant a votre groupe
 - Dans la mesure du possbile créez des composants réutilisables dans le dossier "style"
+- Demander a l'équipe gestion de projet pour merge
 - Essayer de spéraer au maximum le style de la logique de la manière suivante : 
   - Dans le même dossier : 
     - MonComposant.tsx
