@@ -105,6 +105,7 @@ Si vous utilisez Webstorm ou un autre IDE de JetBrains. Vous avez la possibilit�
 ##Règles de codage
 
 - Dans la mesure du possbile créez des composants réutilisables dans le dossier "style"
+- Demander a l'équipe gestion de projet pour merge
 - Essayer de spéraer au maximum le style de la logique de la manière suivante : 
   - Dans le même dossier : 
     - MonComposant.tsx
