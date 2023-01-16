@@ -2,7 +2,7 @@
   <img width="100" height="100" src="./assets/images/clutch/Clutch_icon_1.png">
 </p>
 
-# Applications Mobile Clutch
+# Application Mobile Clutch
 
 ## Prerequis
 
