@@ -2,7 +2,7 @@
   <img width="100" height="100" src="./assets/images/clutch/Clutch_icon_1.png">
 </p>
 
-# Application Mobile Clutch
+# Application Mobiles Clutch
 
 ## Prerequis
 npm et node : [lien d'installation](https://nodejs.org/fr/).
