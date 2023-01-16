@@ -135,6 +135,7 @@ const SearchBarCityGuide: FC<TSearchBarCityGuide> = ({ events, refresh, setDataF
                 isVisible={isDatePickerVisible}
                 mode="date"
                 date={new Date(selectedDate)}
+                minimumDate={new Date()}
                 onConfirm={handleConfirm}
                 onCancel={hideDatePicker}
                 locale={'fr_FR'}
