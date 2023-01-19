@@ -1,52 +1,49 @@
-import { Image, ImageBackground, ImageSourcePropType, StyleSheet, View } from 'react-native'
-import HeaderActions from './HeaderActions'
+import ResearchContent from './components/ResearchContent/ResearchContent'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
+import SearchBarCityGuide from './components/SearchBarCityGuide'
+import HeaderIcons from '../../components/headers/HeadersIcons'
+import { useGetAllEventsQuery } from '../../api/events.service'
+import Container from '../../components/ContainerTouchable'
+import ScreenWrapper from '../../components/ScreenWrapper'
+import CategoriesList from './components/CategoriesList'
+import Title from '../../components/title/Title'
+import Ievent from '../../redux/slices/Ievent'
+import Filters from './components/Filters'
+import { Image, ScrollView } from 'react-native'
+import React, { useState } from 'react'
+import Loading from '../../components/loading/Loading'
 
-type Props = {
-    bgTexture: ImageSourcePropType;
-};
+const ResearchScreen = () => {
+  const dispatch = useAppDispatch()
+  const [dataFiltered, setDataFiltered] = useState<Ievent[] | undefined>(undefined)
+  const currentFilter = useAppSelector(state => state.events.currentFilter)
+  const { data, error, isLoading, refetch } = useGetAllEventsQuery('page=1&itemsPerPage=100&start_date%5Bstrictly_after%5D=' + new Date().toISOString().slice(0, 10))
 
-/**
-* Clutch Header component
-*
-* @param {ImageSourcePropType} bgTexture - require('{assets_directory}/Textures/{texture_name}.png')
-* @return {JSX.Element}
-*/
-const Header = ({ bgTexture }: Props): JSX.Element => {
+  const refresh = () => {
+    setDataFiltered(undefined)
+    return refetch()
+  }
+
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        style={styles.background}
-        resizeMode='cover'
-        source={bgTexture}
-      >
-        <HeaderActions hasBackBtn={false} />
-      </ImageBackground>
-      <Image
-        style={styles.logo}
-        source={require('../../../assets/images/clutch/logo_rondV2.png')}
-      />
-    </View>
+    <ScreenWrapper bg={'#085066'}>
+      <Image style={{ top: 0, left: 125 }} source={require('../../../assets/images/logo/C1_white.png')}/>
+      <Title marginBottom={15} marginTop={40} title={'rechercher un évènement'} weight={'bold'}
+        transform={'uppercase'} size={25} color={'white'}/>
+      <SearchBarCityGuide refresh={refresh} events={data} setDataFiltered={setDataFiltered}/>
+      <Filters onChangeFilter={(filter) => dispatch({ type: 'events/changeCurrentFilter', payload: filter })}/>
+      <ScrollView style={{ marginTop: 30, marginBottom: 60 }}>
+        {currentFilter === 'categories'
+          ? (
+            <CategoriesList/>
+          )
+          : (
+            <Container direction={'column'}>
+              <ResearchContent error={error} data={!dataFiltered ? data : dataFiltered} isLoading={isLoading}/>
+            </Container>
+          )}
+      </ScrollView>
+    </ScreenWrapper>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    width: '100%'
-  },
-  background: {
-    height: 150,
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  logo: {
-    marginTop: -50,
-    marginBottom: 25,
-    width :90,
-    height:90
-  }
-})
-
-export default Header
+export default ResearchScreen
