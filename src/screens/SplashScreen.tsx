@@ -40,7 +40,7 @@ export const SplashScreen = () => {
           {
             toValue: {
               x: 0,
-              y: -Dimensions.get('window').height / 2 + 70
+              y: -Dimensions.get('window').height / 2 + 150
             },
             useNativeDriver: true
           }
@@ -61,13 +61,13 @@ export const SplashScreen = () => {
         ]
       }]}>
         {stateCblack
-          ? <Image style={{ top: 10, margin: 4 }} source={require('../../assets/images/logo/C1.png')}/>
-          : <Image style={{ top: 10, margin: 4 }} source={require('../../assets/images/Clutch_icon_green.png')}/>}
-        {stateL ? <Image style={{ margin: 4 }} source={require('../../assets/images/logo/L.png')}/> : <Text></Text>}
-        {stateU ? <Image style={{ top: 14, margin: 4 }} source={require('../../assets/images/logo/U.png')}/> : <Text></Text>}
-        {stateT ? <Image style={{ margin: 4 }} source={require('../../assets/images/logo/T.png')}/> : <Text></Text>}
-        {stateC ? <Image style={{ top: 10, margin: 4 }} source={require('../../assets/images/logo/C.png')}/> : <Text></Text>}
-        {stateH ? <Image style={{ margin: 4 }} source={require('../../assets/images/logo/H.png')}/> : <Text></Text>}
+          ? <Image style={{ top: 10, margin: 4 }} source={require('../../assets/images/Clutch_icon_green.png')} />
+          : <Image style={{ top: 10, margin: 4 }} source={require('../../assets/images/Clutch_icon_green.png')} />}
+        {stateL ? <Image style={{ margin: 4 }} source={require('../../assets/images/logo/L.png')} /> : <Text></Text>}
+        {stateU ? <Image style={{ top: 14, margin: 4 }} source={require('../../assets/images/logo/U.png')} /> : <Text></Text>}
+        {stateT ? <Image style={{ margin: 4 }} source={require('../../assets/images/logo/T.png')} /> : <Text></Text>}
+        {stateC ? <Image style={{ top: 10, margin: 4 }} source={require('../../assets/images/logo/C.png')} /> : <Text></Text>}
+        {stateH ? <Image style={{ margin: 4 }} source={require('../../assets/images/logo/H.png')} /> : <Text></Text>}
       </Animated.View>
     </View>
   )
@@ -85,10 +85,15 @@ const styles = StyleSheet.create({
     zIndex: 10
   },
   animationContainer: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 15,
+    right: 0,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row'
+    //  justifyContent: 'center',
+    flexDirection: 'row',
   }
 })
 
