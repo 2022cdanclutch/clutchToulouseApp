@@ -26,7 +26,6 @@ const ResearchScreen = () => {
 
   return (
     <ScreenWrapper bg={'#085066'}>
-      <HeaderIcons/>
       <Image style={{ top: 0, left: 125 }} source={require('../../../assets/images/logo/C1_white.png')}/>
       <Title marginBottom={15} marginTop={40} title={'rechercher un évènement'} weight={'bold'}
         transform={'uppercase'} size={25} color={'white'}/>

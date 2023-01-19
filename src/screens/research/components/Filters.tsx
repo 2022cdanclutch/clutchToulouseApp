@@ -15,7 +15,7 @@ const Filters: FC<TFilters> = ({ onChangeFilter }) => {
     }}>
       <Fontisto onPress={() => onChangeFilter('place')} style={{
         marginLeft: 20
-      }} name="map-marker-alt" size={34} color={currentFilter === 'place' ? '#FA4E74' : 'white' } />
+      }} name="nav-icon-list" size={28} color={currentFilter === 'place' ? '#FA4E74' : 'white' } />
       <Ionicons onPress={() => onChangeFilter('calendar')} style={{
         marginLeft: 20
       }} name="md-calendar-sharp" size={34} color={currentFilter === 'calendar' ? '#FA4E74' : 'white' } />

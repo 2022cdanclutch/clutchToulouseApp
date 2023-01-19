@@ -13,7 +13,7 @@ const SearchBar: FC<TSearchBar> = ({ placeholder, iconRight, onSearch, onChange,
   return (
     <SearchBarContainer>
       <SearchBarStyle value={currentSearch} onChange={(e) => onChange(e.nativeEvent.text)} placeholder={placeholder.toUpperCase()}/>
-      <FontAwesome onPress={() => onSearch(true)} name={iconRight.name} size={24} color={iconRight.color} />
+      <FontAwesome onPress={() => onSearch(true)} name={iconRight.name} size={30} color={iconRight.color} />
     </SearchBarContainer>
   )
 }
