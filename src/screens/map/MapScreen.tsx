@@ -190,8 +190,8 @@ const MapScreen = () => {
                           dispatch({
                             type: "events/setSelectedEvent",
                             payload: evt,
-                          });
-                          navigation.navigate(Eroutes.EVENT_DETAILS_SCREEN);
+                          });//définition de l'évènement sélectionné sur l'event ouvert sur la map
+                          navigation.navigate(Eroutes.EVENT_DETAILS_SCREEN);//navigation sur les détais de l'évenement
                         }}
                       >
                         <View style={markerStyle.popupHeader}>
@@ -308,14 +308,15 @@ const MapScreen = () => {
                       </Text>
                     </View>
                     {event.events.map((evt, index) => (
+                      //POUR CHAQUE EVENEMENT:
                       <Pressable
                         key={index}
                         onPress={() => {
                           dispatch({
                             type: "events/setSelectedEvent",
                             payload: evt,
-                          });
-                          navigation.navigate(Eroutes.EVENT_DETAILS_SCREEN);
+                          });//Définition de l'évènement sélectionné sur le paragraphe de chaque évènements
+                          navigation.navigate(Eroutes.EVENT_DETAILS_SCREEN);//navigation sur les détais de l'évenement
                         }}
                       >
                         <View style={markerStyle.popup}>
