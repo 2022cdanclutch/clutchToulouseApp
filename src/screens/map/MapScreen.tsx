@@ -7,6 +7,8 @@ import fr from 'date-fns/locale/fr'
 import { FontAwesome } from '@expo/vector-icons'
 import { format } from 'date-fns'
 import DateTimePicker from 'react-native-modal-datetime-picker'
+import { useNavigation } from '@react-navigation/native'
+import Eroutes from '../../routes/Eroutes'
 
 const styles = StyleSheet.create({
   title: {
@@ -50,6 +52,7 @@ const styleDateBox = StyleSheet.create({
 
 const MapScreen = () => {
   const [selectedDate, setSelectedDate] = useState(new Date())
+  const navigation = useNavigation()
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false)
   let events: any[] = []
   const currentMonth = selectedDate.getMonth() + 1
@@ -57,6 +60,10 @@ const MapScreen = () => {
   const tomorrow = selectedDate.getDate() + 1 + '-' + currentMonth + '-' + selectedDate.getFullYear()
   const { data } = useGetAllEventsQuery('page=1&itemsPerPage=50&start_date[strictly_before]=' + tomorrow + '&start_date[strictly_after]=' + dayBefore)
   const eventsByLocation: { lieu: any, events: any[] }[] = []
+  const handlePress = () => {
+    dispatch({ type: 'events/setSelectedEvent', payload: events })
+    navigation.navigate(Eroutes.EVENT_DETAILS_SCREEN)
+  }
 
   function loadMarkers (date: Date) {
     return (new Date(date).getMonth() === selectedDate.getMonth() &&
@@ -282,3 +289,7 @@ const MapScreen = () => {
   )
 }
 export default MapScreen
+function dispatch(arg0: { type: string; payload: any }) {
+  throw new Error('Function not implemented.')
+}
+
