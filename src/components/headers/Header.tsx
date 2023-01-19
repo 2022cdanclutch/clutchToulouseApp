@@ -23,7 +23,7 @@ const Header = ({ bgTexture }: Props): JSX.Element => {
       </ImageBackground>
       <Image
         style={styles.logo}
-        source={require('../../../assets/images/clutch/Clutch_icon_1.png')}
+        source={require('../../../assets/images/clutch/logo_rondV2.png')}
       />
     </View>
   )
@@ -43,7 +43,9 @@ const styles = StyleSheet.create({
   },
   logo: {
     marginTop: -50,
-    marginBottom: 25
+    marginBottom: 25,
+    width :90,
+    height:90
   }
 })
 
