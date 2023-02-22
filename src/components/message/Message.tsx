@@ -51,7 +51,7 @@ const Message: FC<TMessage> = ({ event, index }) => {
           )}
         </Text>
         <Pressable style={styles.button} onPress={() => deleteAlert(event)}>
-          <Text style={{ color: "red", fontSize: "18" }}>×</Text>
+          <Text style={{ color: "red", fontSize: 18 }}>×</Text>
         </Pressable>
         <Text
           style={{
