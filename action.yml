@@ -26,3 +26,6 @@ jobs:
 
       - name: 🚀 Create update
         run: eas update --auto --non-interactive
+		
+	  - name: 🚀 Build app
+        run: eas build -p android --profile preview
