@@ -45,7 +45,7 @@ jobs:
         run: yarn install --immutable
         
       - name: init eas
-        run: eas init
+        run: eas init --non-interactive
 
-      - name: Publish update
+      - name: Build android
         run: eas build -p android --profile preview --non-interactive
