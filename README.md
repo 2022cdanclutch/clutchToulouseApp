@@ -4,7 +4,7 @@
 
 # Application Mobile Clutch
 
-## Prerequis
+## Prerequi
 
 npm et node : [lien d'installation](https://nodejs.org/fr/).
 
