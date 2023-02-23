@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   logo: {
-    marginTop: -50,
-    marginBottom: 25,
+    // marginTop: -50,
+    // marginBottom: 25,
     width: 90,
     height: 90,
   },
