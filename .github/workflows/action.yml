@@ -45,7 +45,7 @@ jobs:
         run: yarn install --immutable
 
       - name: init eas
-        run: eas init --non-interactive --id 94b08c42-64e2-46e6-b1a4-c4f8ef6a5397
+        run: eas init --non-interactive --id ${{ sercrets.EXPO_SECRET_ID }}
 
       - name: Getting APK URL
         run: eas build:list --json  --non-interactive | jq -r '.[] | .artifacts.buildUrl' | head -1
