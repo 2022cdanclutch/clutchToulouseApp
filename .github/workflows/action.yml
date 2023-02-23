@@ -56,8 +56,8 @@ jobs:
       - name: Upload latest build URL artifact
         uses: actions/upload-artifact@v2
         with:
-          name: latest_build_url
-          path: latest_build_url.md
+          name: latest_ci_url
+          path: $GITHUB_WORKSPACE/latest_ci.md
 
       #- name: Build android
         #run: eas build -p android --profile preview --non-interactive
