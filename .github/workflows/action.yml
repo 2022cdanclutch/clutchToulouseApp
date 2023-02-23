@@ -50,7 +50,14 @@ jobs:
       - name: Getting APK URL
         run: eas build:list --json  --non-interactive | jq -r '.[] | .artifacts.buildUrl' | head -1
 
-        
+      - name: Setting APK URL into file
+        run: echo "$(eas build:list --json  --non-interactive | jq -r '.[] | .artifacts.buildUrl' | head -1)" > latest_ci.md
+
+      - name: Upload latest build URL artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: latest_build_url
+          path: latest_build.md
 
       #- name: Build android
         #run: eas build -p android --profile preview --non-interactive
