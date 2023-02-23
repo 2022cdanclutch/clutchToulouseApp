@@ -57,7 +57,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: latest_build_url
-          path: /
+          path: $GITHUB_WORKSPACE/latest_build.md
 
       #- name: Build android
         #run: eas build -p android --profile preview --non-interactive
