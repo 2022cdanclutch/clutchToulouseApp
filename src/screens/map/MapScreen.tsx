@@ -1,10 +1,10 @@
 import { Fragment, useState } from 'react'
-import { Map, mapStyles, markerStyle } from '../../components/map/mapView.style'
-import MapView, { Callout, Marker } from 'react-native-maps'
+import { darkMode, lightMode, Map, mapStyles, markerStyle } from '../../components/map/mapView.style'
+import MapView, { Callout, Marker, PROVIDER_GOOGLE } from 'react-native-maps'
 import { Image, StyleSheet, Text, View, Appearance, TouchableHighlight } from 'react-native'
 import { useGetAllEventsQuery } from '../../api/events.service'
 import fr from 'date-fns/locale/fr'
-import { FontAwesome } from '@expo/vector-icons'
+import { FontAwesome, Entypo } from '@expo/vector-icons'
 import { format } from 'date-fns'
 import DateTimePicker from 'react-native-modal-datetime-picker'
 
@@ -45,12 +45,26 @@ const styleDateBox = StyleSheet.create({
     textAlign: 'center',
     flexDirection: 'row',
     padding: 2
+  },
+  themeBox: {
+    position: 'absolute',
+    top: 35,
+    left: 10,
+    alignSelf: 'center',
+    backgroundColor: 'rgb(0,0,0)',
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    flexDirection: 'row',
+    padding: 10
   }
 })
 
 const MapScreen = () => {
   const [selectedDate, setSelectedDate] = useState(new Date())
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false)
+  const [isThemeVisible, setThemeVisibility] = useState(false)
   let events: any[] = []
   const currentMonth = selectedDate.getMonth() + 1
   const dayBefore = selectedDate.getDate() - 1 + '-' + currentMonth + '-' + selectedDate.getFullYear()
@@ -63,6 +77,7 @@ const MapScreen = () => {
             new Date(date).getDate() === selectedDate.getDate() &&
             new Date(date).getFullYear() === selectedDate.getFullYear())
   }
+
 
   const showDatePicker = () => {
     setDatePickerVisibility(true)
@@ -248,7 +263,9 @@ const MapScreen = () => {
   return (
     <View style={mapStyles.container}>
       <MapView
+        provider={PROVIDER_GOOGLE}
         style={mapStyles.map}
+        customMapStyle={!isThemeVisible ? lightMode : darkMode}
         initialRegion={{
           latitude: 43.604466,
           longitude: 1.442929,
@@ -277,6 +294,16 @@ const MapScreen = () => {
           onCancel={hideDatePicker}
           locale={'fr_FR'}
         />
+      </View>
+      <View style={styleDateBox.themeBox}>
+        <TouchableHighlight onPress={() => setThemeVisibility(!isThemeVisible)}>
+          <Text style={styles.date}>
+            <Entypo
+              name="light-bulb"
+              size={15}
+              color='#ffff'/>
+          </Text>
+        </TouchableHighlight>
       </View>
     </View>
   )
