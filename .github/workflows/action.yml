@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - main
+      - DeveloppementCI-CDNicolas
 jobs:
   update:
     name: EAS Update
@@ -44,8 +44,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
         
-      - name: init eas
-        run: eas init --non-interactive --id 94b08c42-64e2-46e6-b1a4-c4f8ef6a5397
+      #- name: init eas
+        #run: eas init --non-interactive --id 94b08c42-64e2-46e6-b1a4-c4f8ef6a5397
 
-      - name: Build android
-        run: eas build -p android --profile preview --non-interactive
+      #- name: Build android
+        #run: eas build -p android --profile preview --non-interactive
