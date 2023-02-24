@@ -297,12 +297,10 @@ const MapScreen = () => {
       </View>
       <View style={styleDateBox.themeBox}>
         <TouchableHighlight onPress={() => setThemeVisibility(!isThemeVisible)}>
-          <Text style={styles.date}>
-            <Entypo
-              name="light-bulb"
-              size={15}
-              color='#ffff'/>
-          </Text>
+          <Entypo
+            name="light-bulb"
+            size={25}
+            color='white'/>
         </TouchableHighlight>
       </View>
     </View>
