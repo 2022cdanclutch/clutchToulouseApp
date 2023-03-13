@@ -116,4 +116,4 @@ Si vous utilisez Webstorm ou un autre IDE de JetBrains. Vous avez la possibilit�
 - Essayer de spéraer au maximum le style de la logique de la manière suivante :
   - Dans le même dossier :
     - MonComposant.tsx
-    - monComposant.style.ts
+    - monComposant.style.ts 
