@@ -11,6 +11,8 @@ import { capitalize } from "lodash";
 import { FC } from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { useNavigation } from "@react-navigation/native";
+import Eroutes from "../../routes/Eroutes";
 
 type TMessage = {
   event: Ievent;
@@ -31,6 +33,7 @@ const Message: FC<TMessage> = ({ event, index }) => {
   };
 
   const dispatch = useAppDispatch();
+  const navigation = useNavigation();
 
   const deleteAlert = (event: any) => {
     dispatch({ type: "alerts/disableAlert", payload: event["@id"] });
@@ -39,32 +42,42 @@ const Message: FC<TMessage> = ({ event, index }) => {
 
   return (
     <MessageStyle index={index}>
-      <MessageContentStyle>
-        <Text
-          style={{
-            color: "white",
-            fontWeight: "bold",
-          }}
-        >
-          {capitalize(
-            format(new Date(event.start_date), "PPPPp", { locale: fr })
-          )}
-        </Text>
-        <Pressable style={styles.button} onPress={() => deleteAlert(event)}>
-          <Text style={{ color: "red", fontSize: "18" }}>×</Text>
-        </Pressable>
-        <Text
-          style={{
-            color: "white",
-          }}
-        >
-          {whenEventIs(event.start_date)} {event.name.toUpperCase()} AU{" "}
-          {event.location.name.toUpperCase()}
-        </Text>
+      <Pressable
+        onPress={() => {
+          dispatch({
+            type: "events/setSelectedEvent",
+            payload: event,
+          }); //Définition de l'évènement sélectionné
+          navigation.navigate(Eroutes.EVENT_DETAILS_SCREEN); //navigation sur les détails de l'évenement
+        }}
+      >
+        <MessageContentStyle>
+          <Text
+            style={{
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            {capitalize(
+              format(new Date(event.start_date), "PPPPp", { locale: fr })
+            )}
+          </Text>
+          <Pressable style={styles.button} onPress={() => deleteAlert(event)}>
+            <Text style={{ color: "red", fontSize: 18 }}>×</Text>
+          </Pressable>
+          <Text
+            style={{
+              color: "white",
+            }}
+          >
+            {whenEventIs(event.start_date)} {event.name.toUpperCase()} AU{" "}
+            {event.location.name.toUpperCase()}
+          </Text>
 
-        {/* <FontAwesome5 onPress={deleteAlert(event.name)} style={{ position: 'absolute', right: 0, top: 10 }} name={'trash'} size={15} color="white"/> */}
-      </MessageContentStyle>
-      <MessageTimestampLeft></MessageTimestampLeft>
+          {/* <FontAwesome5 onPress={deleteAlert(event.name)} style={{ position: 'absolute', right: 0, top: 10 }} name={'trash'} size={15} color="white"/> */}
+        </MessageContentStyle>
+        <MessageTimestampLeft></MessageTimestampLeft>
+      </Pressable>
     </MessageStyle>
   );
 };
